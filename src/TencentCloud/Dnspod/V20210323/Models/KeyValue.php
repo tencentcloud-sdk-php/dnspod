@@ -18,20 +18,32 @@ namespace TencentCloud\Dnspod\V20210323\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribeBatchTask请求参数结构体
+ * 键值对
  *
- * @method integer getJobId() 获取任务ID。操作批量接口时会返回JobId
- * @method void setJobId(integer $JobId) 设置任务ID。操作批量接口时会返回JobId
+ * @method string getKey() 获取键
+ * @method void setKey(string $Key) 设置键
+ * @method string getValue() 获取值
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setValue(string $Value) 设置值
+注意：此字段可能返回 null，表示取不到有效值。
  */
-class DescribeBatchTaskRequest extends AbstractModel
+class KeyValue extends AbstractModel
 {
     /**
-     * @var integer 任务ID。操作批量接口时会返回JobId
+     * @var string 键
      */
-    public $JobId;
+    public $Key;
 
     /**
-     * @param integer $JobId 任务ID。操作批量接口时会返回JobId
+     * @var string 值
+注意：此字段可能返回 null，表示取不到有效值。
+     */
+    public $Value;
+
+    /**
+     * @param string $Key 键
+     * @param string $Value 值
+注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
     {
@@ -46,8 +58,12 @@ class DescribeBatchTaskRequest extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("JobId",$param) and $param["JobId"] !== null) {
-            $this->JobId = $param["JobId"];
+        if (array_key_exists("Key",$param) and $param["Key"] !== null) {
+            $this->Key = $param["Key"];
+        }
+
+        if (array_key_exists("Value",$param) and $param["Value"] !== null) {
+            $this->Value = $param["Value"];
         }
     }
 }
